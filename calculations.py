@@ -19,8 +19,8 @@ def ship_speed():
             print("Enter a number and try again.")
             break
         break
-    speed = float((distance / time) * 1.9384)
-    print(f"Target speed is {speed} knots.")
+    speed = float((distance / time) * 1.944)
+    print(f"Target speed is {round(speed, 5)} knots.")
     return speed
 
 
@@ -35,8 +35,8 @@ def ship_distance():
     zoom.lower()
     if zoom == "y":
         distance = distance * 4
-
-    print(f"Target is {distance} meters away.")
+    distance = distance / 100
+    print(f"Target is {round(distance, 5)} hectometers away.")
     return distance
 
 

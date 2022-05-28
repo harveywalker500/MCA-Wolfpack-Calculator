@@ -70,7 +70,6 @@ the docstrings to the user, allowing them to learn what the commands mean."""
             log.warning(f"help_with_cmd, INVALID INPUT: {console_input_list}")
     else:
         print('''
-        Available commands:
         Calculation commands:
         speed
         distance
