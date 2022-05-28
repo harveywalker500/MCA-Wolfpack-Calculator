@@ -63,7 +63,7 @@ the docstrings to the user, allowing them to learn what the commands mean."""
         elif console_input_list[1] == "speed":
             print(calculations.ship_speed.__doc__)
         elif console_input_list[1] == "distance":
-            print(calculations.ship_distance.__doc__)
+            print(calculations.ship_range.__doc__)
         elif console_input_list[1] == "calculate":
             print(calculations.ship_targeting.__doc__)
         else:
@@ -72,7 +72,7 @@ the docstrings to the user, allowing them to learn what the commands mean."""
         print('''
         Calculation commands:
         speed
-        distance
+        range
         calculate
         ---------------------
         Utilities:
@@ -104,8 +104,8 @@ def console():
             clear()
         elif console_input == "speed":
             calculations.ship_speed()
-        elif console_input == "distance":
-            calculations.ship_distance()
+        elif console_input == "range":
+            calculations.ship_range()
         elif console_input == "calculate":
             calculations.ship_targeting()
         else:
