@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import logging as log
-
+import math
 
 def ship_speed():
     """Gives the ability to calculate speed, distance or time using those variables."""
@@ -52,18 +52,21 @@ def ship_targeting():
         try:
             target_name = str(input("Enter ship target name\nC >"))
             log.debug("Target name inputted.")
+            target_speed = ship_speed()
+            target_range = ship_range()
+            target_info = open("Target Info.txt", "a")
+            log.debug("File opened.")
+            target_info.write(f"""SHIP NAME: {target_name}
+SHIP SPEED: {target_speed}
+SHIP RANGE: {target_range}
+--------------------------
+""")
+            log.debug("File written.")
+            target_info.close()
+            log.debug("File closed.")
+            print("Info saved to 'Target Info.txt'")
+            break
+
         except ValueError:
             log.error("ValueError with input!")
             break
-        target_speed = ship_speed()
-        target_range = ship_range()
-        target_info = open("Target Info.txt", "w")
-        log.debug("File opened.")
-        target_info.write(f"""SHIP NAME: {target_name}
-    SHIP SPEED: {target_speed}
-    SHIP RANGE: {target_range}""")
-        log.debug("File written.")
-        target_info.close()
-        log.debug("File closed.")
-        print("Info saved to 'Target Info.txt'")
-        break
